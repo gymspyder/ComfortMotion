@@ -1,0 +1,41 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <AssemblyName>ComfortMotion</AssemblyName>
+    <RootNamespace>ComfortMotion</RootNamespace>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <DebugType>embedded</DebugType>
+    <GameDir>C:\Program Files (x86)\Steam\steamapps\common\How to Fish\How to Fish</GameDir>
+    <ManagedDir>$(GameDir)\How to Fish_Data\Managed</ManagedDir>
+    <MelonDir>$(GameDir)\MelonLoader\net35</MelonDir>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.3" PrivateAssets="all" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <GameAssembly Include="$(ManagedDir)\*.dll"
+                  Exclude="$(ManagedDir)\mscorlib.dll;$(ManagedDir)\netstandard.dll;$(ManagedDir)\System*.dll;$(ManagedDir)\Mono.*.dll" />
+    <LoaderAssembly Include="$(MelonDir)\MelonLoader.dll;$(MelonDir)\0Harmony.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="@(GameAssembly)">
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="@(LoaderAssembly)">
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+  <Target Name="CopyToMods" AfterTargets="Build" Condition="Exists('$(GameDir)\Mods')">
+    <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(GameDir)\Mods" ContinueOnError="WarnAndContinue" />
+    <Message Text="ComfortMotion.dll deployed to $(GameDir)\Mods" Importance="high" />
+  </Target>
+
+</Project>
