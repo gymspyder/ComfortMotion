@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using ComfortMotion.Features;
+using MelonLoader;
 
 namespace ComfortMotion.Core
 {
@@ -20,12 +21,14 @@ namespace ComfortMotion.Core
             Register(new CameraSwayFeature());
             Register(new ScreenShakeFeature());
             Register(new WaterSplashFeature());
-            Register(new SmoothCameraFeature());
             Register(new SteadyToolFeature());
             Register(new LockAdsFovFeature());
             Register(new ReducePostEffectsFeature());
             Register(new FlattenWavesFeature());
             Register(new TreeSwayFeature());
+            Register(new AimCrosshairFeature());
+            Register(new WalkLockFeature());
+            Register(new HideEmptyHandsFeature());
             Register(new ComfortPackFeature());
 
             for (var index = 0; index < All.Count; index++)
@@ -48,11 +51,31 @@ namespace ComfortMotion.Core
             }
         }
 
+        public static void DrawGui()
+        {
+            for (var index = 0; index < All.Count; index++)
+            {
+                var feature = All[index];
+                if (feature.IsActive)
+                {
+                    feature.OnGui();
+                }
+            }
+        }
+
         public static void DisableAll()
         {
             for (var index = 0; index < All.Count; index++)
             {
                 All[index].Enabled.Value = false;
+            }
+        }
+
+        public static void EnableAll()
+        {
+            for (var index = 0; index < All.Count; index++)
+            {
+                All[index].Enabled.Value = true;
             }
         }
 
@@ -63,6 +86,7 @@ namespace ComfortMotion.Core
             {
                 feature.ApplyEnabledState();
                 feature.WasEnabled = enabled;
+                MelonPreferences.Save();
             }
 
             feature.Tick();

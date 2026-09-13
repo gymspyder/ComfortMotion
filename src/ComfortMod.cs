@@ -3,7 +3,7 @@ using ComfortMotion.Core;
 using HarmonyLib;
 using MelonLoader;
 
-[assembly: MelonInfo(typeof(ComfortMotion.ComfortMod), "ComfortMotion", "1.0.0", "gymspyder")]
+[assembly: MelonInfo(typeof(ComfortMotion.ComfortMod), "ComfortMotion", "1.0.1", "gymspyder")]
 [assembly: MelonGame("Dazed Games", "How to Fish")]
 
 namespace ComfortMotion
@@ -36,6 +36,7 @@ namespace ComfortMotion
 
         public override void OnGUI()
         {
+            Registry.DrawGui();
             _menu.Draw();
         }
 

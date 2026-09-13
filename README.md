@@ -4,7 +4,7 @@ A small, focused MelonLoader mod for **How to Fish** that removes the camera
 motion that triggers motion sickness and stalls boats onto calm water.
 Everything is toggleable from a single in-game menu.
 
-It is a **standing-alone comfort kit**: only the 11 motion-comfort features,
+It is a **standing-alone comfort kit**: only the 13 motion-comfort features,
 with its own minimal framework. It does not depend on, and can run without,
 any other mod.
 
@@ -19,12 +19,14 @@ any other mod.
 | Disable Camera Sway | Removes the strafe/fall camera tilt and roll |
 | Disable Screen Shake | Removes explosion/boss screen shake |
 | Disable Water Splash | Hides water splash particles (boat wake, propeller froth, item/projectile entry) — splash *audio* stays |
-| Smooth Camera | Smooths vertical camera motion (smooth-damped); optional smooth turning (yaw) |
 | Steady Tool | Keeps the held tool/rod steady (no sway/bob/look wobble) |
+| Walk Lock | Keeps your hands still while walking (tool, empty hands, and held items like fish), moving up/down with the terrain instead of per-step bobbing |
+| Hide Empty Hands | No fists floating in front of the screen — hands appear only when you punch (off when holding or looking at items) |
 | Lock ADS FOV | Keeps the camera zoomed at your base FOV while aiming down sights |
 | Reduce Post Effects | Turns off motion blur, chromatic aberration and film grain (depth of field / vignette optional) |
+| Aim Crosshair | Draws a crosshair that matches the weapon's actual shot spread (size-adjustable) |
 | Comfort Pack | One switch that enables the whole comfort stack, restores your previous settings when turned off |
-| Flatten Waves | Flattens the ocean (physics + visuals) so the boat stops rocking |
+| Flatten Waves | Calms the ocean — flat water AND a dead-stable boat (zeroes wave heights + maximizes buoyancy damping) |
 | Disable Tree Sway | Freezes the wind-driven sway of trees, grass and plants |
 
 ## Requirements
@@ -41,23 +43,30 @@ any other mod.
    - `.../Steam/steamapps/common/How to Fish/How to Fish/Mods/`
    - (some installs put it at `.../MelonLoader/Mods/` — use whichever one
      MelonLoader created)
-3. Launch the game. A "ComfortMotion loaded with 11 comfort features" line
+3. Launch the game. A "ComfortMotion loaded with 13 comfort features" line
    appears in the MelonLoader log (the console window that opens alongside
    the game).
 
 ## Usage
 
 - Press **F5** to open/close the ComfortMotion menu.
-- Toggle any feature on or off. Toggles persist between sessions.
-- **Smooth Camera** also has a *Smoothing* slider and a *Smooth turn (yaw)*
-  option.
+- Toggle any feature on or off. Toggles persist between sessions (and survive
+  world reloads).
 - **Reduce Post Effects** has per-effect toggles (motion blur, chromatic
   aberration, film grain, depth of field, vignette).
 - **Comfort Pack** enables all of the above in one click; turning it off
   restores whatever you had before.
 - **Disable all** turns everything off at once (handy as a panic button).
+- **Enable all** turns everything on at once.
+- **Steady Tool** kills the sway/look-wobble; **Walk Lock** additionally strips
+  the per-step walk bob but keeps the terrain-following fall offsets.
+- **Hide Empty Hands** (on by default) removes the floating fists entirely.
+  They reappear while punching, and staying on during throw/drop/grab
+  transitions and boat driving.
+- **Aim Crosshair** has a *Size* slider; its gap matches the weapon's shot
+  spread (a scoped sniper hides it and uses the game's own reticle).
 - The menu key can be changed in the MelonLoader preferences file under the
-  `ComfortMotion` category (`menu.key`, default `F5`).
+  `ComfortMotion` category (`menuKey`, default `F5`).
 
 ## Configuration
 

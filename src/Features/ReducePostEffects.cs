@@ -18,11 +18,11 @@ namespace ComfortMotion.Features
 
         public ReducePostEffectsFeature()
         {
-            DisableMotionBlur = Preferences.Category.CreateEntry(Id + ".disableMotionBlur", true, "Disable motion blur");
-            DisableChromaticAberration = Preferences.Category.CreateEntry(Id + ".disableChromaticAberration", true, "Disable chromatic aberration");
-            DisableFilmGrain = Preferences.Category.CreateEntry(Id + ".disableFilmGrain", true, "Disable film grain");
-            DisableDepthOfField = Preferences.Category.CreateEntry(Id + ".disableDepthOfField", false, "Disable depth of field");
-            DisableVignette = Preferences.Category.CreateEntry(Id + ".disableVignette", false, "Disable vignette");
+            DisableMotionBlur = Preferences.Category.CreateEntry(Id + "DisableMotionBlur", true, "Disable motion blur");
+            DisableChromaticAberration = Preferences.Category.CreateEntry(Id + "DisableChromaticAberration", true, "Disable chromatic aberration");
+            DisableFilmGrain = Preferences.Category.CreateEntry(Id + "DisableFilmGrain", true, "Disable film grain");
+            DisableDepthOfField = Preferences.Category.CreateEntry(Id + "DisableDepthOfField", false, "Disable depth of field");
+            DisableVignette = Preferences.Category.CreateEntry(Id + "DisableVignette", false, "Disable vignette");
         }
 
         public override string Id => "reducePostEffects";

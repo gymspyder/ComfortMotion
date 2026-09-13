@@ -6,7 +6,7 @@ namespace ComfortMotion.Core
     {
         protected Feature(bool enabledByDefault = false)
         {
-            Enabled = Preferences.Category.CreateEntry(Id + ".enabled", enabledByDefault, Name);
+            Enabled = Preferences.Category.CreateEntry(Id + "Enabled", enabledByDefault, Name);
         }
 
         public abstract string Id { get; }
@@ -15,7 +15,7 @@ namespace ComfortMotion.Core
 
         public MelonPreferences_Entry<bool> Enabled { get; }
 
-        public bool IsActive => Game.IsInGame && Enabled.Value;
+        public bool IsActive => Enabled.Value;
 
         internal bool WasEnabled;
 
@@ -24,6 +24,10 @@ namespace ComfortMotion.Core
         }
 
         public virtual void Tick()
+        {
+        }
+
+        public virtual void OnGui()
         {
         }
 

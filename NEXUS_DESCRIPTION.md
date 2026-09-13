@@ -11,7 +11,7 @@ default sections.
 
 ComfortMotion is a small, focused MelonLoader mod for **How to Fish** that
 gets rid of the camera motion which commonly triggers motion sickness, and
-lets you flatten the ocean for calm sailing. Only 11 comfort features, all
+lets you flatten the ocean for calm sailing. Only 13 comfort features, all
 toggleable from an in-game menu — no bloat.
 
 This is an unofficial fan-made modification. It is not made by, affiliated
@@ -25,12 +25,17 @@ with, or endorsed by Dazed Games.
 - **Disable Screen Shake** — removes explosion/boss screen shake.
 - **Disable Water Splash** — hides water splash particles incl. boat wake and
   propeller froth; sound stays.
-- **Smooth Camera** — smooth-damped vertical camera (+ optional smooth
-  turning/yaw).
 - **Steady Tool** — keeps your rod/tool perfectly steady.
+- **Walk Lock** — hands stay planted while walking and ride the terrain up
+  and down (no per-step bob).
+- **Hide Empty Hands** — no more floating fists in front of the screen; your
+  hands only appear when you punch (stays on through throw/drop/grab and
+  boat driving).
 - **Lock ADS FOV** — no zoom-punch while aiming down sights.
 - **Reduce Post Effects** — kills motion blur, chromatic aberration, film
   grain (depth of field / vignette optional).
+- **Aim Crosshair** — a crosshair that mirrors your weapon's real shot spread
+  (size adjustable).
 - **Comfort Pack** — one switch for the whole stack, restores your prior
   settings when turned off.
 - **Flatten Waves** — flatten the ocean (physics + visuals); boat stops

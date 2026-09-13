@@ -18,8 +18,8 @@ namespace ComfortMotion.Features
             AddMember<HeadBobFeature>();
             AddMember<CameraSwayFeature>();
             AddMember<ScreenShakeFeature>();
-            AddMember<SmoothCameraFeature>();
             AddMember<SteadyToolFeature>();
+            AddMember<WalkLockFeature>();
             AddMember<WaterSplashFeature>();
             AddMember<FlattenWavesFeature>();
             AddMember<TreeSwayFeature>();
