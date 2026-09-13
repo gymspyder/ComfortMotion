@@ -3,6 +3,8 @@
 A small, focused MelonLoader mod for **How to Fish** that reduces camera movement and visual effects that can contribute to motion discomfort and stalls boats onto calm water.
 Everything is toggleable from a single in-game menu.
 
+I made this because these effects were causing me significant motion sickness. After testing ComfortMotion, I was able to play for several hours without the sickness I normally experienced.
+
 It is a **standing-alone comfort kit**: only the 13 motion-comfort features,
 with its own minimal framework. It does not depend on, and can run without,
 any other mod.
